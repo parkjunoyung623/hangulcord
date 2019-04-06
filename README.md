@@ -1,4 +1,4 @@
-sw-festival-core
+hangulcord
 ====
 
 ```
@@ -7,25 +7,27 @@ sw-festival-core
     메시지 보내기 (안녕)
 ```
 
-sw-festival-core는 2019 광주 SW 체험 축전 참여를 위해 개발된 코드 컨버터입니다.
+hangulcord는 2019 광주 SW 체험 축전 참여를 위해 개발된 코드 컨버터입니다.
 
 지정된 한글 문자열을 파이썬 코드로 변환하여 프로그래밍을 좀 더 쉽게 할 수 있게 돕습니다.
 
->-숭덕고등학교 IT동아리, 404 컴퓨터 못 찾음에 의해 개발됨
+코딩 교육용, 체험용으로 활용할 수 있지만, 애플리케이션 구조 상 현업에서는 활용할 수 없습니다.
+
+> -숭덕고등학교 IT동아리, 404 컴퓨터 못 찾음에 의해 개발됨
 
 ## 시작하기
 
 ### 환경구성
 Windows
 ```
-pip install discord.py
+pip install -r requirements.txt
 python app.py
 ```
 
 Linux
 ```
-pip3 install discord.py
-python app.py
+pip3 install -r requirements.txt
+python3 app.py
 ```
 
 ## 기여자 목록
