@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 import re
 
 class rem:
-    img = r'src="(?P<src>[0-9a-zA-Zㄱ-ㅣ가-힣(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]*)"'
+    img = re.compile(r'src="(?P<src>[0-9a-zA-Zㄱ-ㅣ가-힣(?=.*[!@#$%^&*();\-_=+\\\|\[\]{};:\'",.<>\/?]*)"')
 
 class req:
     query = 'content'
@@ -16,15 +16,24 @@ class req:
 soup = {'full' : bs(req.content, 'html.parser')}
 content = soup['full'].find_all('li', {'class' : 'sh_blog_top'})
 
+search_result = []
 tmp = {}
-for i in range(len(content)):
-    print(content[i])
-    bs(content[i], 'html.parser')
-    #soup['obj'] = bs(content[i], 'html.parser')
-    #tmp['content'] = soup.find('li')
-    #soup['obj-thumb'] = bs(tmp['content'], 'html.parser')
-    #tmp['thumb'] = soup.find('img', {'class' : 'sh_blog_thumbnail'})
-    #tmp['re'] = re.compile(img)
-    #tmp['res-thumb'] = tmp['re'].group('src')
-    #print(tmp['res-thumb'])
+for i in range(3):
+    tmp = {}
+    soup['obj'] = bs(str(content[i]), 'html.parser')
+    tmp['content'] = soup['obj'].find('li')
+    # thumbnail
+    soup['obj-thumb'] = bs(str(tmp['content']), 'html.parser')
+    tmp['thumb'] = str(soup['obj-thumb'].find('img', {'class' : 'sh_blog_thumbnail'}))
+    tmp['thumb_url'] = rem.img.search(tmp['thumb']).group('src')
+    # common
+    # title
+    # content
+    # result
+    search_result += {
+        'thumbnail' : tmp['thumb_url'],
+        'title' : '',
+        'content' : ''
+    }
+    print(tmp['thumb_url'])
 tmp = {}
