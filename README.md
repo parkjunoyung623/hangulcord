@@ -38,12 +38,6 @@ pip3 install -r requirements.txt
 python3 app.py
 ```
 
-기여자 목록
-----
- * 박종현 - 개발 - @kpjhg0124
- * 박준영
- * 안영현
- 
 라이선스
 ----
 SW 축전 일자까지 _개인목적으로만 사용_ 이용조건 하에 사용할 수 있습니다.
