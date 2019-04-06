@@ -1,8 +1,10 @@
 hangulcord
 ====
-![](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)
-![](https://img.shields.io/badge/license-limited-red.svg)
+![Supported Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)]
+[![License](https://img.shields.io/badge/license-limited-red.svg)](#라이선스)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c814f3b50d4548eebcd52d6062d39d1a)](https://www.codacy.com/app/kpjhg0124/hangulcord?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=404-sdok/hangulcord&amp;utm_campaign=Badge_Grade)
+
+![Hangulcord Logo](./logo.png)
 
 ```
 메시지 도착하면:
@@ -24,14 +26,14 @@ hangulcord는 2019 광주 SW 체험 축전 참여를 위해 개발된 코드 컨
 ### 환경구성
 Windows
 
-```
+```bash
 pip install -r requirements.txt
 python app.py
 ```
 
 Linux
 
-```
+```bash
 pip3 install -r requirements.txt
 python3 app.py
 ```
@@ -39,6 +41,8 @@ python3 app.py
 기여자 목록
 ----
  * 박종현 - 개발 - @kpjhg0124
+ * 박준영
+ * 안영현
  
 라이선스
 ----
