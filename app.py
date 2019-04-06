@@ -6,18 +6,18 @@ code = open('봇', encoding = 'utf-8').read()
 # ================================================================================ #
 
 
-code = code.replace('메시지 도착하면:', dic['str']['메시지 도착하면'])
+code = code.replace('메시지 도착하면:', dic['str']['message_recevied'])
 code = re.sub(
-    dic['re']['만약 메시지 전체'],
-    dic['str']['만약 메시지 전체'].replace('%_variable_%', 
-        re.compile(dic['re']['만약 메시지 전체']).search(code).group('content')
+    dic['re']['if_message'],
+    dic['str']['if_message'].replace('%_variable_%', 
+        re.compile(dic['re']['if_message']).search(code).group('content')
     ),
     code
 )
 code = re.sub(
-    dic['re']['메시지 보내기'],
-    dic['str']['메시지 보내기'].replace('%_variable_%', 
-        re.compile(dic['re']['메시지 보내기']).search(code).group('content')
+    dic['re']['send_message'],
+    dic['str']['send_message'].replace('%_variable_%', 
+        re.compile(dic['re']['send_message']).search(code).group('content')
     ),
     code
 )

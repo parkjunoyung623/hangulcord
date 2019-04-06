@@ -1,23 +1,27 @@
 dic = {
     'str' : {
-        '메시지 도착하면' : 
+        'message_recevied' : 
 '''
 @client.event
 async def on_message(message):
 ''',
 
-        '만약 메시지 전체' : 
+        'if_message' : 
 '''
     if message.content == '%_variable_%':
 ''',
-        '메시지 보내기' : 
+        'send_message ' : 
 '''
         await client.send_message(message.channel, '%_variable_%')
 '''
 
     },
     're' : {
-        '만약 메시지 전체' : r'만약 메시지 = (?P<content>(.*?)):',
-        '메시지 보내기' : r'메시지 보내기 \((?P<content>(.*?))\)'
+        'if_message' : r'만약 메시지 = (?P<content>(.*?)):',
+        'send_message ' : r'메시지 보내기 \((?P<content>(.*?))\)'
     }
 }
+
+# message_recevied      메시지 도착하면
+# if_message            만약 메시지 전체
+# send_message          메시지 보내기
