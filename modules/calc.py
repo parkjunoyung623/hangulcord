@@ -7,8 +7,8 @@ def calc(content = ''):
     matchobj = re_var.findall(content)
 
     content_removed = content
-    for i in range(len(matchobj)):
-        content_removed = content_removed.replace(matchobj[i], '')
+    for i in matchobj:
+        content_removed = content_removed.replace(i, '')
 
     template = '''
 # -*- coding: utf-8 -*-
