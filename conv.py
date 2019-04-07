@@ -4,6 +4,9 @@ dic = {
 '''
 @client.event
 async def on_message(message):
+    if message.content == '봇 종료':
+        await client.send_message(message.channel, '안녀엉!')
+        exit()
 ''',
 
         'if_message' : 
