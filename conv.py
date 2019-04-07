@@ -10,7 +10,7 @@ async def on_message(message):
 '''
     if message.content == '%_variable_%':
 ''',
-        'send_message ' : 
+        'send_message' : 
 '''
         await client.send_message(message.channel, '%_variable_%')
 '''
@@ -18,7 +18,7 @@ async def on_message(message):
     },
     're' : {
         'if_message' : r'만약 메시지 = (?P<content>(.*?)):',
-        'send_message ' : r'메시지 보내기 \((?P<content>(.*?))\)'
+        'send_message' : r'메시지 보내기 \((?P<content>(.*?))\)'
     }
 }
 

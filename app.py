@@ -1,5 +1,5 @@
 import re
-from conv.py import *
+from conv import *
 
 code = open('봇', encoding = 'utf-8').read()
 
