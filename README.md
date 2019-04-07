@@ -1,6 +1,6 @@
 hangulcord
 ====
-![Supported Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)
+[![Supported Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)](#)
 [![License](https://img.shields.io/badge/license-limited-red.svg)](#라이선스)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c814f3b50d4548eebcd52d6062d39d1a)](https://www.codacy.com/app/kpjhg0124/hangulcord?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=404-sdok/hangulcord&amp;utm_campaign=Badge_Grade)
 
@@ -12,9 +12,11 @@ hangulcord
     메시지 보내기 (안녕)
 ```
 
-hangulcord는 2019 광주 SW 체험 축전 부스 참여를 위해 개발된 코드 컨버터입니다.
+_스펙은 이후 수정될 수 있습니다. 현재 구현되었거나 구현중인 코드는 [봇](./봇) 파일에서 확인하실 수 있습니다._
 
-hangulcord를 이용하여 디스코드 챗봇을 개발할 수 있으며, 지정된 한글 문자열을 파이썬 코드로 변환하여 챗봇 프로그래밍을 좀 더 쉽게 체험할 수 있게 합니다.
+한글코드는 2019 광주 SW 체험 축전 부스 참여를 위해 개발된 코드 컨버터입니다.
+
+한글코드를 이용하여 디스코드 챗봇을 개발할 수 있으며, 지정된 한글 문자열을 파이썬 코드로 변환하여 챗봇 프로그래밍을 좀 더 쉽게 체험할 수 있게 합니다.
 
 코딩 교육용, 체험용으로 활용할 수 있지만, 애플리케이션 구조 상 현업에서는 활용할 수 없습니다.
 
@@ -32,13 +34,23 @@ Windows
 
 ```bash
 pip install -r requirements.txt
-python app.py
 ```
 
 Linux
 
 ```bash
 pip3 install -r requirements.txt
+```
+
+#### 실행
+Windows
+
+```bash
+python app.py
+```
+
+Linux
+```bash
 python3 app.py
 ```
 

@@ -7,22 +7,78 @@ code = open('봇', encoding = 'utf-8').read()
 
 
 code = code.replace('메시지 도착하면:', dic['str']['message_recevied'])
-code = re.sub(
-    dic['re']['if_message'],
-    dic['str']['if_message'].replace('%_variable_%', re.compile(dic['re']['if_message']).search(code).group('content')),
-    code
-)
-code = re.sub(
-    dic['re']['send_message'],
-    dic['str']['send_message'].replace('%_variable_%', re.compile(dic['re']['send_message']).search(code).group('content')),
-    code
-)
 
+find = re.compile(dic['re']['if_message']).findall(code)
+for find_obj in find:
+    code = code.replace(
+        find_obj[0], dic['str']['if_message'].replace(
+            '%_variable_%', 
+            re.compile(dic['re']['if_message']).search(code).group('content')
+            )
+        )
+
+find = re.compile(dic['re']['if_startswith']).findall(code)
+for find_obj in find:
+    code = code.replace(
+        find_obj[0], dic['str']['if_startswith'].replace(
+            '%_variable_%', 
+            re.compile(dic['re']['if_startswith']).search(code).group('content')
+            )
+        )
+
+find = re.compile(dic['re']['calc']).findall(code)
+for find_obj in find:
+    code = code.replace(
+        find_obj[0], dic['str']['calc'].replace(
+            '%_variable_%', 
+            re.compile(dic['re']['calc']).search(code).group('content')
+            )
+        )
+
+find = re.compile(dic['re']['search_naver']).findall(code)
+for find_obj in find:
+    code = code.replace(
+        find_obj[0], dic['str']['search_naver'].replace(
+            '%_variable_%', 
+            re.compile(dic['re']['search_naver']).search(code).group('content')
+            )
+        )
+
+
+find = re.compile(dic['re']['send_result']).findall(code)
+for find_obj in find:
+    search = re.compile(dic['re']['send_result']).search(code)
+    if search != None:
+        code = code.replace(
+            find_obj[0], dic['str']['send_result'].replace(
+                '%_variable_%', 
+                re.compile(dic['re']['send_result']).search(code).group('content')
+                )
+            )
+
+find = re.compile(dic['re']['send_message']).findall(code)
+for find_obj in find:
+    code = code.replace(
+        find_obj[0], dic['str']['send_message'].replace(
+            '%_variable_%', 
+            re.compile(dic['re']['send_message']).search(code).group('content')
+            )
+        )
+
+
+code = re.sub(
+    dic['re']['get_content'],
+    dic['str']['get_content'],
+    code
+)
 # ================================================================================ #
 
 native = '''
 # -*- coding: utf-8 -*-
 import discord
+import modules.calc
+import modules.common
+import modules.naver
 
 client = discord.Client()
 
@@ -30,6 +86,9 @@ client = discord.Client()
 
 def discord_run():
     client.run('{token}')
+
+if __name__ == '__main__':
+    discord_run()
 '''.format(code = code, token = open('key', encoding = 'utf-8').read())
 
 with open('rendered.py', 'w', encoding = 'utf-8') as f:

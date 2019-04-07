@@ -9,22 +9,21 @@ async def on_message(message):
         exit()
 ''',
 
-        'if_message' : 
-'''
-    if message.content == '%_variable_%':
-''',
-        'send_message' : 
-'''
-        await client.send_message(message.channel, '%_variable_%')
-'''
-
+        'if_message' : 'if message.content == "%_variable_%":',
+        'if_startswith' : 'if message.content.startswith("%_variable_%"):',
+        'get_content' : 'modules.common.getcontent(message.content)',
+        'send_message' : 'await client.send_message(message.channel, "%_variable_%")',
+        'send_result' : 'await client.send_message(message.channel, %_variable_%)',
+        'search_naver' : 'modules.naver.request(%_variable_%)',
+        'calc' : 'modules.calc.calc(%_variable_%)'
     },
     're' : {
-        'if_message' : r'만약 메시지 = (?P<content>(.*?)):',
-        'send_message' : r'메시지 보내기 \((?P<content>(.*?))\)'
+        'if_message' : r'(?P<fullmatch>만약 메시지 = (?P<content>(.*?)):)',
+        'if_startswith' : r'(?P<fullmatch>만약 메시지 시작부분 = (?P<content>(.*?)):)',
+        'get_content' : r'내용 가져오기 \(\)',
+        'send_message' : r'(?P<fullmatch>내용 보내기 \((?P<content>(.*?))\))',
+        'send_result' : r'(?P<fullmatch>결과 내용 보내기 \((?P<content>(.*?))\))',
+        'search_naver' : r'(?P<fullmatch>네이버에 검색 \((?P<content>(.*?))\))',
+        'calc' : r'(?P<fullmatch>계산 \((?P<content>(.*?))\))'
     }
 }
-
-# message_recevied      메시지 도착하면
-# if_message            만약 메시지 전체
-# send_message          메시지 보내기
