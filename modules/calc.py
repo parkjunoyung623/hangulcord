@@ -22,7 +22,9 @@ def calc():
         with open('calc_rendered.py', 'w', encoding='utf-8') as f:
             f.write(template)
         import calc_rendered as cr
-        return (True, cr.calc())
+        result = cr.calc()
+        del cr
+        return (True, result)
 
 if __name__ == '__main__':
     print(calc('355-6*988+356+65658'))
