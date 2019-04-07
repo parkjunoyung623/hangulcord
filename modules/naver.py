@@ -9,7 +9,7 @@ class rem:
     img = re.compile(r'src="(?P<src>.*?]*)"')
     title = re.compile(r'<a.*?>(?P<src>.*)<\/a>')
     content = re.compile(r'<dd.*?passage.*?>(?P<src>.*)<\/dd>')
-    
+
 def replace_bold(content):
     content = content.replace('<strong class="hl">', '')
     return content.replace('</strong>', '')
