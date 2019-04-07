@@ -6,11 +6,12 @@ dic = {
 async def on_message(message):
     if message.content == '봇 종료':
         await client.send_message(message.channel, '안녀엉!')
+        print('봇 종료됨.')
         exit()
 ''',
 
-        'if_message' : 'if message.content == "%_variable_%":',
-        'if_startswith' : 'if message.content.startswith("%_variable_%"):',
+        'if_message' : 'if message.content == "%_variable_%" and client.user.id != message.author.id:',
+        'if_startswith' : 'if message.content.startswith("%_variable_%") and client.user.id != message.author.id:',
         'get_content' : 'modules.common.getcontent(message.content)',
         'send_message' : 'await client.send_message(message.channel, "%_variable_%")',
         'send_result' : 'await client.send_message(message.channel, %_variable_%)',

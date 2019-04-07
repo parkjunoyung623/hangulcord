@@ -82,6 +82,14 @@ import modules.naver
 
 client = discord.Client()
 
+@client.event
+async def on_ready():
+    print('봇 시작됨.')
+    print('봇 이름: ' + client.user.name)
+    print('봇 아이디: ' + client.user.id)
+    print('------')
+    await client.change_presence(game=discord.Game(name='안녕하세요!'))
+
 {code}
 
 def discord_run():
