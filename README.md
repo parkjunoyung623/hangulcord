@@ -40,6 +40,11 @@ Linux
 pip3 install -r requirements.txt
 ```
 
+#### 애플리케이션 요구 데이터 설정
+[디스코드 개발자 포털](https://discordapp.com/developers/applications/)에서 챗봇 시크릿 키를 받아옵니다.
+
+`key` 파일을 생성하고, 챗봇 시크릿 키를 작성합니다.
+
 #### 실행
 Windows
 
