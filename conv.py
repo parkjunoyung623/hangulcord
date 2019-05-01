@@ -16,7 +16,7 @@ async def on_message(message):
         'send_message' : 'await client.send_message(message.channel, "%_variable_%")',
         'send_result' : 'await client.send_message(message.channel, %_variable_%)',
         'search_naver' : 'modules.naver.request(%_variable_%)',
-        'calc' : 'modules.common.display_calc(modules.calc.calc(%_variable_%))'
+        'calc' : 'modules.common.display_calc(eval(%_variable_%))'
     },
     're' : {
         'if_message' : r'(?P<fullmatch>만약 메시지 = (?P<content>(.*?)):)',

@@ -76,7 +76,6 @@ code = re.sub(
 native = '''
 # -*- coding: utf-8 -*-
 import discord
-import modules.calc
 import modules.common
 import modules.naver
 
