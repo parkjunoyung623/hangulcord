@@ -5,7 +5,7 @@ dic = {
 @client.event
 async def on_message(message):
     if message.content == '봇 종료':
-        await client.send_message(message.channel, '안녀엉!')
+        await message.channel.send('안녀엉!')
         print('봇 종료됨.')
         exit()
 ''',
@@ -13,10 +13,10 @@ async def on_message(message):
         'if_message' : 'if message.content == "%_variable_%" and client.user.id != message.author.id:',
         'if_startswith' : 'if message.content.startswith("%_variable_%") and client.user.id != message.author.id:',
         'get_content' : 'modules.common.getcontent(message.content)',
-        'send_message' : 'await client.send_message(message.channel, "%_variable_%")',
-        'send_result' : 'await client.send_message(message.channel, %_variable_%)',
+        'send_message' : 'await message.channel.send("%_variable_%")',
+        'send_result' : 'await message.channel.send(%_variable_%)',
         'search_naver' : 'modules.naver.request(%_variable_%)',
-        'calc' : 'modules.common.display_calc(eval(%_variable_%))'
+        'calc' : 'eval(%_variable_%)'
     },
     're' : {
         'if_message' : r'(?P<fullmatch>만약 메시지 = (?P<content>(.*?)):)',
