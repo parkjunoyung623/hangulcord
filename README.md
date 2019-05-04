@@ -45,6 +45,11 @@ pip3 install -r requirements.txt
 
 `key` 파일을 생성하고, 챗봇 시크릿 키를 작성합니다.
 
+key
+```
+NDMOTA2TU1E4T2MAwODA3MOD.XMg0J7.p4FiPppgOugPSQF3s6ZWNtNhQI0
+```
+
 #### 실행
 Windows
 
