@@ -35,6 +35,16 @@ for find_obj in find:
             )
         )
 
+find = re.compile(dic['re']['opgg']).findall(code)
+for find_obj in find:
+    code = code.replace(
+        find_obj[0], dic['str']['opgg'].replace(
+            '%_variable_%', 
+            re.compile(dic['re']['opgg']).search(code).group('content')
+            )
+        )
+
+
 find = re.compile(dic['re']['search_naver']).findall(code)
 for find_obj in find:
     code = code.replace(
@@ -86,6 +96,7 @@ import modules.common
 import modules.naver
 import modules.weather
 import modules.calc
+import modules.opgg
 
 client = discord.Client()
 

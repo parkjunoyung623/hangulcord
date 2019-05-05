@@ -17,7 +17,8 @@ async def on_message(message):
         'send_result' : 'await message.channel.send("", embed=%_variable_%)',
         'search_naver' : 'modules.naver.request(%_variable_%)',
         'calc' : 'modules.common.get_fancy(modules.calc.calc(%_variable_%))',
-        'weather' : 'modules.common.get_fancy(modules.weather.get())'
+        'weather' : 'modules.common.get_fancy(modules.weather.get())',
+        'opgg' : 'modules.common.get_fancy(modules.opgg.get(%_variable_%))'
     },
     're' : {
         'if_message' : r'(?P<fullmatch>만약 메시지 = (?P<content>(.*?)):)',
@@ -27,6 +28,7 @@ async def on_message(message):
         'send_result' : r'(?P<fullmatch>결과 내용 보내기 \((?P<content>(.*?))\))',
         'search_naver' : r'(?P<fullmatch>네이버에 검색 \((?P<content>(.*?))\))',
         'calc' : r'(?P<fullmatch>계산 \((?P<content>(.*?))\))',
-        'weather' : r'날씨 검색(.*?)\(\)'
+        'weather' : r'날씨 검색(.*?)\(\)',
+        'opgg' : r'(?P<fullmatch>(OP\.GG|op\.gg)에.*?검색.*?\((?P<content>.*?)\))'
     }
 }
