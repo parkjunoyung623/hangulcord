@@ -71,6 +71,12 @@ code = re.sub(
     dic['str']['get_content'],
     code
 )
+
+code = re.sub(
+    dic['re']['weather'],
+    dic['str']['weather'],
+    code
+)
 # ================================================================================ #
 
 native = '''
@@ -78,6 +84,8 @@ native = '''
 import discord
 import modules.common
 import modules.naver
+import modules.weather
+import modules.calc
 
 client = discord.Client()
 
