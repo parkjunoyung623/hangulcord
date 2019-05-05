@@ -3,6 +3,8 @@ hangulcord
 [![Supported Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)](#)
 [![License](https://img.shields.io/badge/license-limited-red.svg)](#라이선스)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c814f3b50d4548eebcd52d6062d39d1a)](https://www.codacy.com/app/kpjhg0124/hangulcord?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=404-sdok/hangulcord&amp;utm_campaign=Badge_Grade)
+[![Discord.py](https://img.shields.io/badge/discord.py-1.0.1-lightgrey.svg)](https://github.com/Rapptz/discord.py)
+[![Beautifulsoup](https://img.shields.io/badge/beautifulsoup4-4.7.1-lightgrey.svg)](#)
 
 ![Hangulcord Logo](./logo.png)
 
