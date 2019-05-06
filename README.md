@@ -43,13 +43,18 @@ pip3 install -r requirements.txt
 ```
 
 #### 애플리케이션 요구 데이터 설정
-[디스코드 개발자 포털](https://discordapp.com/developers/applications/)에서 챗봇 시크릿 키를 받아옵니다.
+[디스코드 개발자 포털](https://discordapp.com/developers/applications/)에서 챗봇 시크릿 키를 받아옵니다.  
+[네이버 개발자 센터](https://developers.naver.com/apps)에서 검색 API 사용이 허가된 클라이언트 아이디, 시크릿을 받아옵니다.
 
-`key` 파일을 생성하고, 챗봇 시크릿 키를 작성합니다.
+`key.json` 파일을 형식에 맞게 수정합니다.
 
-key
-```
-NDMOTA2TU1E4T2MAwODA3MOD.XMg0J7.p4FiPppgOugPSQF3s6ZWNtNhQI0
+key.json (예시)
+```json
+{
+    "discord_bot_token" : "NDMOTA2TU1E4T2MAwODA3MOD.XMg0J7.p4FiPppgOugPSQF3s6ZWNtNhQI0",
+    "naver_search_client_id" : "XDKO545rxrIdmem72a0_",
+    "naver_search_client_secret" : "xkFKRI2dDQ"
+}
 ```
 
 #### 실행
