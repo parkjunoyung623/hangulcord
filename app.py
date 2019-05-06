@@ -1,4 +1,5 @@
 import re
+import json
 from conv import *
 
 code = open('봇', encoding = 'utf-8').read()
@@ -115,7 +116,8 @@ def discord_run():
 
 if __name__ == '__main__':
     discord_run()
-'''.format(code = code, token = open('key', encoding = 'utf-8').read())
+'''.format(code = code, token = json.loads(open('key.json', encoding='utf-8').read())['discord_bot_token']
+)
 
 with open('rendered.py', 'w', encoding = 'utf-8') as f:
     f.write(native)
