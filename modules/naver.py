@@ -6,7 +6,7 @@ import urllib.request
 import urllib.parse
 import json
 
-key = json.loads(open('../key.json').read())
+key = json.loads(open(os.path.dirname(__file__) + '/../key.json').read())
 
 def get(search_content):
     url = 'https://openapi.naver.com/v1/search/blog?query={}'.format(urllib.parse.quote(search_content))
